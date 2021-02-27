@@ -1,0 +1,38 @@
+<div class="modal">
+    <form (ngSubmit)="saveCard()" [formGroup]="formCard">
+        <div>
+            <label for="">Name:</label>
+            <input type="text" formControlName="name">
+        </div>
+        <div>
+            <label for="">description:</label>
+            <input type="text" formControlName="description">
+        </div>
+        <div>
+            <button>Actualizar!!</button>
+        </div>
+    </form>
+
+    <div>
+        <h4>Comentarios</h4>
+        <ul>
+            <li *ngFor="let comment of params.comments">
+                {{comment.name}} - {{comment.comment}}
+
+                <!-- <img [src]="comment.name" alt=""> -->
+            </li>
+        </ul>
+
+        <form (ngSubmit)="saveComment()" [formGroup]="formComment">
+            <div>
+                <label for="">Comment:</label>
+                <input type="text" formControlName="comment">
+            </div>
+            <div>
+                <button>Comentarr!!</button>
+            </div>
+        </form>
+    </div>
+
+    <button (click)="close()">Cerrar</button>
+</div>

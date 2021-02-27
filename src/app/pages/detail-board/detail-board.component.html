@@ -1,0 +1,36 @@
+<h1>{{board.name}}</h1>
+<hr>
+<form (ngSubmit)="saveUser()" [formGroup]="formUser">
+    <div>
+        <label for="">Name:</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="">Alias:</label>
+        <input type="text" formControlName="alias">
+    </div>
+    <div>
+        <button>crear!!</button>
+    </div>
+</form>
+
+<div>
+    <h4>Users:</h4>
+    <ul>
+        <li *ngFor="let user of board.users">{{user.alias}}</li>    
+    </ul>
+    
+</div>
+
+<hr>
+
+<div>
+    <ul *ngFor="let list of board.list">
+        <p>{{list.name}}</p>
+        <li *ngFor="let item of list.items" style="cursor: pointer;" (click)="openModal(item)">
+             {{item.name}}
+        </li>
+
+    </ul>
+</div>
+

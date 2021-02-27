@@ -1,0 +1,10 @@
+.boards{
+    display: flex;
+    gap: 20px;
+    
+}
+.board{
+    background-color: grey;
+    padding: 20px;
+    cursor: pointer;
+}
